@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Attar\DesignPatterns\FactoryMethod\Conceptual;
+namespace FactoryMethod\Conceptual;
 
 class ConcreteProduct1 implements Product
 {
