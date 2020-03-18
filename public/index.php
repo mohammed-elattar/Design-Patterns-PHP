@@ -2,21 +2,19 @@
 
 declare(strict_types=1);
 
-require_once __DIR__.'/Autoload.php';
-use System\Autoload;
-use FactoryMethod\Conceptual\Creator;
-use FactoryMethod\Conceptual\ConcreteCreator1;
-use FactoryMethod\Conceptual\ConcreteCreator2;
-use FactoryMethod\Practical\SocialNetworkPoster;
-use FactoryMethod\Practical\FacebookPoster;
-use FactoryMethod\Practical\LinkedinPoster;
+require "../vendor/autoload.php";
 
-$app=new Autoload();
+use App\FactoryMethod\Conceptual\Creator;
+use App\FactoryMethod\Conceptual\ConcreteCreator1;
+use App\FactoryMethod\Conceptual\ConcreteCreator2;
+use App\FactoryMethod\Practical\SocialNetworkPoster;
+use App\FactoryMethod\Practical\FacebookPoster;
+use App\FactoryMethod\Practical\LinkedinPoster;
+use App\AbstractFactory\Conceptual\WinFactory;
+use App\AbstractFactory\Conceptual\MacFactory;
+use App\AbstractFactory\Conceptual\GuiFactory;
 
-/**
- * Factory Method Conceptual Calls
- */
-
+/** Factory Method Conceptual Call */
 function factoryMethodCode(Creator $creator): void
 {
     echo $creator->someOperation();
@@ -29,14 +27,10 @@ echo "<br>";
 
 $creator = new ConcreteCreator2();
 factoryMethodCode($creator);
-/**
- * End Factory Method Conceptual Calls
- */
+/** End Factory Method Conceptual Call */
 
 
-/**
- * Factory Method Practical Calls
- */
+/** Factory Method Practical Calls */
 function practicalFactoryMethodCode(SocialNetworkPoster $socialNetworkPoster): void
 {
     $socialNetworkPoster->post('Hello world');
@@ -48,6 +42,16 @@ practicalFactoryMethodCode($linkedinPoster);
 
 $facebookPoster = new FacebookPoster('mseel3ttar@faceebook.com','123456789');
 practicalFactoryMethodCode($facebookPoster);
-/**
- * End Factory Method Practical Calls
- */
+/** End Factory Method Practical Call */
+
+function conceptualAbstractFactory(GuiFactory $guiFactory): void
+{
+    $button = $guiFactory->createButton();
+    $button->paint();
+
+    $checkbox = $guiFactory->createCheckbox();
+    $checkbox->paint();
+}
+
+conceptualAbstractFactory(new WinFactory());
+conceptualAbstractFactory(new MacFactory());

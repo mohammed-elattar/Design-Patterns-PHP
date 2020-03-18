@@ -2,9 +2,7 @@
 
 declare(strict_types=1);
 
-namespace FactoryMethod\Practical;
-
-use FactoryMethod\Practical\SocialNetworkConnector;
+namespace App\FactoryMethod\Practical;
 
 class LinkedinConnector implements SocialNetworkConnector
 {

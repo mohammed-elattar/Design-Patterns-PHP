@@ -1,0 +1,14 @@
+{
+    "name": "root/www",
+    "authors": [
+        {
+            "name": "mohammed-elattar",
+            "email": "mseel3ttar@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "public//"
+        }
+    }
+}

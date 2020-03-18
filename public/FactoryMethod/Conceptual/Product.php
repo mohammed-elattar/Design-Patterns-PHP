@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace FactoryMethod\Conceptual;
+namespace App\FactoryMethod\Conceptual;
 
 interface Product
 {
