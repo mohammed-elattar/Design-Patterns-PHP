@@ -8,6 +8,6 @@ class TwigPageTemplate implements PageTemplate
 {
     public function getTemplateString(): string
     {
-        return 'Twig template called';
+        return 'Twig template called<br/>';
     }
 }

@@ -8,6 +8,6 @@ class WinButton implements Button
 {
     public function paint(): void
     {
-        echo 'it\'s a windows button';
+        echo 'it\'s a windows button<br/>';
     }
 }

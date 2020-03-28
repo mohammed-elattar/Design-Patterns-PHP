@@ -9,12 +9,12 @@ class FacebookPoster extends SocialNetworkPoster
     /**
      * @var string
      */
-    private string $email;
+    private $email;
     
     /**
      * @var string
      */
-    private string $password;
+    private $password;
 
     public function __construct(string $email, string $password)
     {

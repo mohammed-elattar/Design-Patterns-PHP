@@ -28,17 +28,17 @@ class LinkedinConnector implements SocialNetworkConnector
             , $this->email,
             __CLASS__,
             $this->password);
-        echo "\n\n";
+        echo "<br/>";
     }
 
     public function post(string $content): void
     {
-        echo sprintf('post content is %s', $content);
+        echo sprintf('post content is %s <br/>', $content);
     }
 
     public function logout(): void
     {
-        echo sprintf('User with email %s has logged out from %s . \n'
+        echo sprintf('User with email %s has logged out from %s . <br/>'
             , $this->email,
             __CLASS__);
     }

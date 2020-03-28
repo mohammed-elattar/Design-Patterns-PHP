@@ -8,6 +8,6 @@ class MacCheckbox implements Checkbox
 {
     public function paint(): void
     {
-        echo 'it\'s a Mac Checkbox';
+        echo 'it\'s a Mac Checkbox<br/>';
     }
 }

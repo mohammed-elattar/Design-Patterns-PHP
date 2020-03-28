@@ -8,6 +8,6 @@ class WinCheckbox implements Checkbox
 {
     public function paint(): void
     {
-        echo 'it\'s a Win Checkbox';
+        echo 'it\'s a Win Checkbox<br/>';
     }
 }

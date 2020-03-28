@@ -4,17 +4,21 @@ declare(strict_types=1);
 
 require '../vendor/autoload.php';
 
-use App\FactoryMethod\Conceptual\Creator;
-use App\FactoryMethod\Conceptual\ConcreteCreator1;
-use App\FactoryMethod\Conceptual\ConcreteCreator2;
-use App\FactoryMethod\Practical\SocialNetworkPoster;
-use App\FactoryMethod\Practical\FacebookPoster;
-use App\FactoryMethod\Practical\LinkedinPoster;
-use App\AbstractFactory\Conceptual\WinFactory;
-use App\AbstractFactory\Conceptual\MacFactory;
 use App\AbstractFactory\Conceptual\GuiFactory;
+use App\AbstractFactory\Conceptual\MacFactory;
+use App\AbstractFactory\Conceptual\WinFactory;
 use App\AbstractFactory\Practical\PhpTemplateFactory;
 use App\AbstractFactory\Practical\TemplateFactory;
+use App\Builder\Conceptual\Client;
+use App\Builder\Practical\MysqlQueryBuilder;
+use App\Builder\Practical\PostgresQueryBuilder;
+use App\Builder\Practical\SqlBuilderClientCode;
+use App\FactoryMethod\Conceptual\ConcreteCreator1;
+use App\FactoryMethod\Conceptual\ConcreteCreator2;
+use App\FactoryMethod\Conceptual\Creator;
+use App\FactoryMethod\Practical\FacebookPoster;
+use App\FactoryMethod\Practical\LinkedinPoster;
+use App\FactoryMethod\Practical\SocialNetworkPoster;
 
 /** Factory Method Conceptual Call */
 function factoryMethodCode(Creator $creator): void
@@ -24,9 +28,11 @@ function factoryMethodCode(Creator $creator): void
 
 $creator = new ConcreteCreator1();
 factoryMethodCode($creator);
+echo "<br/><br/>";
 
 $creator = new ConcreteCreator2();
 factoryMethodCode($creator);
+echo "<br/><br/>";
 /** End Factory Method Conceptual Call */
 
 
@@ -39,9 +45,11 @@ function practicalFactoryMethodCode(SocialNetworkPoster $socialNetworkPoster): v
 
 $linkedinPoster = new LinkedinPoster('mseel3ttar@linkedin.com', '123456789');
 practicalFactoryMethodCode($linkedinPoster);
+echo "<br/><br/>";
 
 $facebookPoster = new FacebookPoster('mseel3ttar@faceebook.com', '123456789');
 practicalFactoryMethodCode($facebookPoster);
+echo "<br/><br/>";
 /** End Factory Method Practical Call */
 
 /** Start Abstract Factory Conceptual */
@@ -55,7 +63,9 @@ function conceptualAbstractFactory(GuiFactory $guiFactory): void
 }
 
 conceptualAbstractFactory(new WinFactory());
+echo "<br/><br/>";
 conceptualAbstractFactory(new MacFactory());
+echo "<br/><br/>";
 /** End Abstract Factory Conceptual */
 
 /** Start Abstract Factory practical */
@@ -73,4 +83,18 @@ class Page
 
 $page = new Page();
 echo $page->render(new PhpTemplateFactory());
+echo "<br/><br/>";
 /** End Abstract Factory practical */
+
+$client = new Client();
+$client->clientCode();
+echo "<br/><br/>";
+
+$client = new SqlBuilderClientCode();
+echo "Testing MySQL query builder: <br/>";
+$client->clientCode(new MysqlQueryBuilder());
+
+echo "<br/><br/>";
+
+echo "Testing PostgresSQL query builder: <br/><br/>";
+$client->clientCode(new PostgresQueryBuilder());

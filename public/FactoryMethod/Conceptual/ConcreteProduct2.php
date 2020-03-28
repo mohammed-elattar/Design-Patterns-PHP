@@ -8,6 +8,6 @@ class ConcreteProduct2 implements Product
 {
     public function operation(): string
     {
-        return 'product 2 called';
+        return 'product 2 called<br/>';
     }
 }

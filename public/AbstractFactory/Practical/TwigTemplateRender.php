@@ -8,6 +8,6 @@ class TwigTemplateRender implements TemplateRenderer
 {
     public function render(): string
     {
-        return 'Twig template render called';
+        return 'Twig template render called<br/>';
     }
 }

@@ -8,6 +8,6 @@ class PhpTemplateRender implements TemplateRenderer
 {
     public function render(): string
     {
-        return 'PHP template render called';
+        return 'PHP template render called<br/>';
     }
 }

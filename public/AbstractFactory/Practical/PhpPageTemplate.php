@@ -8,6 +8,6 @@ class PhpPageTemplate implements PageTemplate
 {
     public function getTemplateString(): string
     {
-        return 'php template called';
+        return 'php template called<br/>';
     }
 }

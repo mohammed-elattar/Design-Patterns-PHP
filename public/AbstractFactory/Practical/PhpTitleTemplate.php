@@ -8,6 +8,6 @@ class PhpTitleTemplate implements TitleTemplate
 {
     public function getTemplateString(): string
     {
-        return 'php template string called';
+        return 'php template string called<br/>';
     }
 }

@@ -8,6 +8,6 @@ class MacButton implements Button
 {
     public function paint(): void
     {
-        echo 'it\'s a Mac button';
+        echo 'it\'s a Mac button<br/>';
     }
 }

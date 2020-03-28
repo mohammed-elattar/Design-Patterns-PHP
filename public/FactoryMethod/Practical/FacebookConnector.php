@@ -9,12 +9,12 @@ class FacebookConnector implements SocialNetworkConnector
     /**
      * @var string
      */
-    private string $email;
+    private $email;
 
     /**
      * @var string
      */
-    private string $password;
+    private $password;
 
     public function __construct(string $email, string $password)
     {
@@ -28,13 +28,13 @@ class FacebookConnector implements SocialNetworkConnector
             , $this->email,
             __CLASS__,
             $this->password);
-        echo "\n";
+        echo "<br/>";
     }
 
     public function post(string $content): void
     {
         echo sprintf('post content is %s', $content);
-        echo "\n";
+        echo "<br/>";
     }
 
     public function logout(): void
@@ -42,6 +42,6 @@ class FacebookConnector implements SocialNetworkConnector
         echo sprintf('User with email %s has logged out from %s .'
             , $this->email,
             __CLASS__);
-        echo "\n";
+        echo "<br/>";
     }
 }
