@@ -86,6 +86,7 @@ echo $page->render(new PhpTemplateFactory());
 echo "<br/><br/>";
 /** End Abstract Factory practical */
 
+/** Start Builder Pattern */
 $client = new Client();
 $client->clientCode();
 echo "<br/><br/>";
@@ -98,3 +99,18 @@ echo "<br/><br/>";
 
 echo "Testing PostgresSQL query builder: <br/><br/>";
 $client->clientCode(new PostgresQueryBuilder());
+echo "<br/><br/>";
+/** End Builder Pattern */
+
+/** Start Singleton Pattern */
+$config = \App\Singleton\Config::getInstance();
+$config->setConfig(
+    '{"dsn":"mysql:host=localhost;dbname=test","user":"test","pass":"test"}'
+);
+// Init the db connection (which depends on the Config singleton)
+$db = \App\Singleton\Database::getInstance();
+$db1 = \App\Singleton\Database::getInstance();
+$db2 = \App\Singleton\Database::getInstance();
+var_dump($db1,$db2,$db);
+echo "<br/><br/>";
+/** End Singleton Pattern */
